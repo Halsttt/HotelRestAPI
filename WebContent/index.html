@@ -1,40 +1,39 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Vinos - jQuery - REST API - JEE</title>
+	<title>Hoteles - jQuery - REST API - JEE</title>
 	<link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 	<div class="header">
 		<input type="text" id="campoBusqueda" />
 		<button class="btnBusqueda">Buscar</button>
-		<button class="new">Nuevo Vino</button>
+		<button class="new">Nuevo Hotel</button>
 	</div>
 	
 	<div class="areaLista">
-		<ul id="listaVinos"></ul>
+		<ul id="listaHoteles"></ul>
 	</div>
 	
 	<form>
 		<div class="areaDetalle">
 			<label>Id:</label>
-			<input id="vinoId" name="id" disabled />
+			<input id="id" name="id" disabled />
 			
 			<label>Nombre:</label>
 			<input id="nombre" name="nombre" required />
 		
-			<label>Uvas:</label>
-			<input id="uvas" name="uvas" />
+			<label>Precio:</label>
+			<input id="precio" name="precio" />
 			
 			<label>Pais:</label>
-			<input id="pais" name="pais" />
+			<input id="ubicacion" name="ubicacion" />
 			
 			<label>Region:</label>
-			<input id="region" name="region" />
+			<input id="pais" name="pais" />
 			
-			<label>A&ntilde;o:</label>
-			<input id="anyo" name="anyo" />
-			
+			<label>Estrellas:</label>
+			<input id="estrellas" name="estrellas" />
 			<br/>
 			<button id="btnSave" class="save">Guardar</button>			
 			<button id="btnDelete" class="remove">Eliminar</button>		

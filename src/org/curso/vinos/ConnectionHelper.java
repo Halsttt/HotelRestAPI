@@ -13,7 +13,7 @@ public class ConnectionHelper {
 	private ConnectionHelper()	{		
     	String driver = null;
 		try {			
-            ResourceBundle bundle = ResourceBundle.getBundle("vinos");
+            ResourceBundle bundle = ResourceBundle.getBundle("hotel");
             driver = bundle.getString("jdbc.driver");
             Class.forName(driver);
             url = bundle.getString("jdbc.url");
