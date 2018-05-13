@@ -9,16 +9,17 @@
 		<input type="text" id="campoBusqueda" />
 		<button class="btnBusqueda">Buscar</button>
 		<button class="new">Nuevo Hotel</button>
+		<button class="top3">Top 3</button>
 	</div>
 	
 	<div class="areaLista">
-		<ul id="listaHoteles"></ul>
+		<ul id="listaHotel"></ul>
 	</div>
 	
 	<form>
 		<div class="areaDetalle">
 			<label>Id:</label>
-			<input id="id" name="id" disabled />
+			<input id="hotelId" name="hotelId" disabled />
 			
 			<label>Nombre:</label>
 			<input id="nombre" name="nombre" required />
@@ -26,10 +27,10 @@
 			<label>Precio:</label>
 			<input id="precio" name="precio" />
 			
-			<label>Pais:</label>
+			<label>Ubicacion:</label>
 			<input id="ubicacion" name="ubicacion" />
 			
-			<label>Region:</label>
+			<label>Pais:</label>
 			<input id="pais" name="pais" />
 			
 			<label>Estrellas:</label>

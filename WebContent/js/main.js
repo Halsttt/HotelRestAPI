@@ -30,6 +30,12 @@ $('.new').click(function() {
 	return false;
 });
 
+$('.top3').click(function() {
+	console.log("click top 3")
+	top3();
+	//return false;
+});
+
 $('#btnSave').click(function() {
 	if ($('#hotelId').val() == '')
 		addHotel();
@@ -64,6 +70,16 @@ function newHotel() {
 	hotelActual = { imagen: 'generic.jpg'};
 	renderDetails(hotelActual); // Mostrar formulario vacio
 	$('#nombre').focus();
+}
+
+function top3(){
+	console.log('findTop3');
+	$.ajax({
+		type: 'GET',
+		url: rootURL + '/top3',
+		dataType: "json", // tipo de la respuesta
+		success: renderList
+	});
 }
 
 function findAll() {

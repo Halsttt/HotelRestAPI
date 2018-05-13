@@ -29,6 +29,26 @@ public class HotelDAO {
 		}
         return list;
     }
+    
+    public List<Hotel> findTop3() {
+        List<Hotel> list = new ArrayList<Hotel>();
+        Connection conn = null;
+    	String sql = "SELECT * FROM hotel WHERE estrellas=5 and precio<200 ORDER BY nombre ASC LIMIT 3";
+        try {
+            conn = ConnectionHelper.getConnection();
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                list.add(processRow(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+		} finally {
+			ConnectionHelper.close(conn);
+		}
+        return list;
+    }
 
     
     public List<Hotel> findByName(String nombre) {

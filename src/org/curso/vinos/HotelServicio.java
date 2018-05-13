@@ -12,7 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/vinos")
+@Path("/hotel")
 public class HotelServicio {
 
 	HotelDAO dao = new HotelDAO();
@@ -28,6 +28,12 @@ public class HotelServicio {
 	public Hotel findByName(@PathParam("query") String query) {		
 		return dao.findByName(query).get(0);
 	}
+	
+	@GET @Path("top3")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Hotel> findTop3() {		
+		return dao.findTop3();
+	}
 
 	@GET @Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -40,7 +46,7 @@ public class HotelServicio {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Hotel create(Hotel hotel) {
-		System.out.println("creando vino");
+		System.out.println("creando hotel");
 		return dao.save(hotel);
 	}
 
@@ -48,7 +54,7 @@ public class HotelServicio {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Hotel update(Hotel hotel, @PathParam("id") int id) {		
-		System.out.println("Actualizando vino: " + hotel.getNombre());
+		System.out.println("Actualizando hotel: " + hotel.getNombre());
 		hotel.setId(id);
 		dao.save(hotel);
 		return hotel;
