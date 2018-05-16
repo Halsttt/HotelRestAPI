@@ -5,7 +5,7 @@ USE hotelesdb;
 CREATE TABLE `hotel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) DEFAULT NULL,
-  `precio` float(2,2) DEFAULT NULL,
+  `precio` float DEFAULT NULL,
   `ubicacion` varchar(100) DEFAULT NULL,
   `pais` varchar(20) DEFAULT NULL,
   `estrellas` int(11) DEFAULT NULL,
